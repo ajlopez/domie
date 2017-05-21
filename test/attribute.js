@@ -18,3 +18,15 @@ exports['attribute name'] = function (test) {
 	test.equal(attr.name, 'class');
 };
 
+exports['attribute value'] = function (test) {
+	var attr = domie.document().createAttribute('id');
+	
+	test.strictEqual(attr.value, '');
+	
+	attr.value = 42;
+	
+	test.strictEqual(attr.value, '42');
+};
+
+
+
