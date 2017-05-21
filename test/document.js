@@ -36,3 +36,18 @@ exports['html has head'] = function (test) {
 	test.equal(head.tagName, "HEAD");
 	test.equal(head.nodeType, 1);
 }
+
+exports['html has body'] = function (test) {
+	var document = domie.document();
+	
+	var html = document.documentElement;
+	
+	test.ok(html.childNodes);
+	test.ok(html.childNodes.length > 1);
+	
+	var body = html.childNodes[1];
+	
+	test.ok(body);
+	test.equal(body.tagName, "BODY");
+	test.equal(body.nodeType, 1);
+}
