@@ -64,6 +64,26 @@ exports['parse element with text and attribute'] = function (test) {
 	test.equal(result[0].outerHTML, '<h1 id="42">hello</h1>');
 }
 
+exports['parse element with text and attribute string value'] = function (test) {
+	var result = parser.parse('<h1 id = "the title">hello</h1>', document);
+	
+	test.ok(result);
+	test.equal(result.length, 1);
+	test.equal(result[0].nodeType, 1);
+	test.equal(result[0].tagName, 'H1');
+	test.equal(result[0].outerHTML, '<h1 id="the title">hello</h1>');
+}
+
+exports['parse element with text and attribute string value enclosed in sigle quotes'] = function (test) {
+	var result = parser.parse("<h1 id='the title'>hello</h1>", document);
+	
+	test.ok(result);
+	test.equal(result.length, 1);
+	test.equal(result[0].nodeType, 1);
+	test.equal(result[0].tagName, 'H1');
+	test.equal(result[0].outerHTML, '<h1 id="the title">hello</h1>');
+}
+
 exports['parse element with text and two attributes'] = function (test) {
 	var result = parser.parse('<h1 id = 42 visible>hello</h1>', document);
 	
