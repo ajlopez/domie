@@ -70,3 +70,32 @@ exports['create element'] = function (test) {
 	test.equal(element.nodeType, 1);
 }
 
+exports['load event'] = function (test) {
+	var document = domie.document();
+	var executed = false;
+	
+	document.addEventListener('load', function () { executed = true; });
+	
+	test.equal(executed, false);
+	
+	document.loaded();
+	
+	test.equal(executed, true);	
+}
+
+exports['load event with two listeners'] = function (test) {
+	var document = domie.document();
+	var executed = false;
+	var executed2 = false;
+	
+	document.addEventListener('load', function () { executed = true; });
+	document.addEventListener('load', function () { executed2 = true; });
+	
+	test.equal(executed, false);
+	test.equal(executed2, false);
+	
+	document.loaded();
+	
+	test.equal(executed, true);	
+	test.equal(executed2, true);	
+}
