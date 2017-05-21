@@ -38,3 +38,26 @@ exports['get all elements by tag name'] = function (test) {
 	test.equal(elements[2].tagName, 'BODY');
 };
 
+exports['get element by id'] = function (test) {
+	var h1 = document.createElement('h1');
+	var id = document.createAttribute('id');
+	id.value = 42;
+	h1.attributes.setNamedItem(id);
+	
+	var body = document.getElementsByTagName('body')[0];
+	
+	body.appendChild(h1);
+	
+	var result = document.getElementById(42);
+	
+	test.ok(result);
+	test.equal(result.tagName, 'H1');
+	test.equal(result.outerHTML, '<h1 id="42"></h1>');
+};
+
+exports['get unknown element by id'] = function (test) {	
+	var result = document.getElementById('foo');
+	
+	test.equal(result, null);
+};
+
