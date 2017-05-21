@@ -78,3 +78,43 @@ exports['outer HTML with attribute'] = function (test) {
 	test.equal(element.outerHTML, '<h1 id="42"></h1>');
 };
 
+exports['get attribute'] = function (test) {
+	var document = domie.document();
+	var element = document.createElement('h1');
+	var attr = document.createAttribute('id');
+	attr.value = 42;
+	element.attributes.setNamedItem(attr);
+	
+	test.strictEqual(element.getAttribute('id'), '42');
+};
+
+exports['get unknown attribute'] = function (test) {
+	var document = domie.document();
+	var element = document.createElement('h1');
+	
+	test.equal(element.getAttribute('id'), null);
+};
+
+exports['get attribute node'] = function (test) {
+	var document = domie.document();
+	var element = document.createElement('h1');
+	var attr = document.createAttribute('id');
+	attr.value = 42;
+	element.attributes.setNamedItem(attr);
+	
+	var result = element.getAttributeNode('id');
+	
+	test.ok(result);
+	test.equal(result.name, 'id');
+	test.strictEqual(result.value, '42');
+};
+
+exports['get unknown attribute node'] = function (test) {
+	var document = domie.document();
+	var element = document.createElement('h1');
+	
+	test.equal(element.getAttributeNode('id'), null);
+};
+
+
+
