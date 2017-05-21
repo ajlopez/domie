@@ -12,6 +12,8 @@ exports['document node type'] = function (test) {
 	var document = domie.document();
 	
 	test.equal(document.nodeType, 9);
+	document.nodeType = 42
+	test.equal(document.nodeType, 9);
 }
 
 exports['initial document element'] = function (test) {
