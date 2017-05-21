@@ -24,6 +24,26 @@ exports['inner HTML'] = function (test) {
 	test.equal(element.innerHTML, '');
 };
 
+exports['set inner HTML to text'] = function (test) {
+	var element = domie.document().createElement('h1');
+	
+	test.ok(element);
+	test.equal(element.innerHTML, '');
+	
+	element.innerHTML = "hello world";
+	test.equal(element.innerHTML, 'hello world');
+};
+
+exports['set inner HTML to elements'] = function (test) {
+	var element = domie.document().createElement('div');
+	
+	test.ok(element);
+	test.equal(element.innerHTML, '');
+	
+	element.innerHTML = "<h1>hello</h1><h2>world</h2>";
+	test.equal(element.innerHTML, '<h1>hello</h1><h2>world</h2>');
+};
+
 exports['document outer HTML'] = function (test) {
 	var element = domie.document().documentElement;
 	
