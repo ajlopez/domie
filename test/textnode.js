@@ -21,3 +21,13 @@ exports['change text node value'] = function (test) {
 	
 	test.equal(node.nodeValue, 'hola mundo');
 };
+
+exports['innerHTML and outerHTML with text node'] = function (test) {
+	var element = document.createElement('h1');
+	var node = document.createTextNode('hello world');
+	element.appendChild(node);
+	
+	test.equal(element.innerHTML, 'hello world');
+	test.equal(element.outerHTML, '<h1>hello world</h1>');
+};
+
