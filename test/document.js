@@ -8,3 +8,8 @@ exports['create document object'] = function (test) {
 	test.equal(typeof document, 'object');
 }
 
+exports['document node type'] = function (test) {
+	var document = domie.document();
+	
+	test.equal(document.nodeType, 9);
+}
