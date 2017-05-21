@@ -83,3 +83,15 @@ exports['parse two elements with text'] = function (test) {
 	test.equal(result[1].tagName, 'H2');
 	test.equal(result[1].outerHTML, '<h2>world</h2>');
 }
+
+exports['parse two nested elements'] = function (test) {
+	var result = parser.parse('<div><h1>hello</h1></div>', document);
+	
+	test.ok(result);
+	test.equal(result.length, 1);
+
+	test.equal(result[0].nodeType, 1);
+	test.equal(result[0].tagName, 'DIV');
+	test.equal(result[0].outerHTML, '<div><h1>hello</h1></div>');
+}
+
