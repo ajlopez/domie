@@ -21,3 +21,18 @@ exports['initial document element'] = function (test) {
 	test.equal(document.documentElement.tagName, "HTML");
 	test.equal(document.documentElement.nodeType, 1);
 }
+
+exports['html has head'] = function (test) {
+	var document = domie.document();
+	
+	var html = document.documentElement;
+	
+	test.ok(html.childNodes);
+	test.ok(html.childNodes.length);
+	
+	var head = html.childNodes[0];
+	
+	test.ok(head);
+	test.equal(head.tagName, "HEAD");
+	test.equal(head.nodeType, 1);
+}
