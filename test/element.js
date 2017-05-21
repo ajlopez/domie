@@ -26,3 +26,10 @@ exports['document inner HTML'] = function (test) {
 	
 	test.equal(element.innerHTML, '<head></head><body></body>');
 };
+
+exports['no attributes'] = function (test) {
+	var element = domie.document().createElement('h1');
+	
+	test.ok(element.attributes);
+	test.equal(element.attributes.length, 0);
+};
