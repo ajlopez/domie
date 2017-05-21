@@ -2,6 +2,15 @@
 var domie = require('..');
 
 exports['outer HTML'] = function (test) {
+	var document = domie.document();
+	
+	var element = document.createElement('h1');
+	
+	test.ok(element.ownerDocument);
+	test.strictEqual(element.ownerDocument, document);
+};
+
+exports['outer HTML'] = function (test) {
 	var element = domie.document().createElement('h1');
 	
 	test.ok(element);
