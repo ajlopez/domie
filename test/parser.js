@@ -33,3 +33,13 @@ exports['parse null text'] = function (test) {
 	test.ok(result);
 	test.equal(result.length, 0);
 }
+
+exports['parse simple element'] = function (test) {
+	var result = parser.parse('<h1></h1>', document);
+	
+	test.ok(result);
+	test.equal(result.length, 1);
+	test.equal(result[0].nodeType, 1);
+	test.equal(result[0].tagName, 'H1');
+	test.equal(result[0].outerHTML, '<h1></h1>');
+}
