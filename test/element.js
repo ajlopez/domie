@@ -67,3 +67,14 @@ exports['set, get and remove named attribute'] = function (test) {
 	test.equal(result, null);
 	test.equal(element.attributes.length, 0);
 };
+
+exports['outer HTML with attribute'] = function (test) {
+	var document = domie.document();
+	var element = document.createElement('h1');
+	var attr = document.createAttribute('id');
+	attr.value = 42;
+	element.attributes.setNamedItem(attr);
+	
+	test.equal(element.outerHTML, '<h1 id="42"></h1>');
+};
+
