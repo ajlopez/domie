@@ -69,3 +69,4 @@ exports['create element'] = function (test) {
 	element.nodeType = 42;
 	test.equal(element.nodeType, 1);
 }
+
