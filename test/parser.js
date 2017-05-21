@@ -54,6 +54,16 @@ exports['parse element with text'] = function (test) {
 	test.equal(result[0].outerHTML, '<h1>hello</h1>');
 }
 
+exports['parse element with text and attribute'] = function (test) {
+	var result = parser.parse('<h1 id = 42>hello</h1>', document);
+	
+	test.ok(result);
+	test.equal(result.length, 1);
+	test.equal(result[0].nodeType, 1);
+	test.equal(result[0].tagName, 'H1');
+	test.equal(result[0].outerHTML, '<h1 id="42">hello</h1>');
+}
+
 exports['parse two elements'] = function (test) {
 	var result = parser.parse('<h1></h1><h2></h2>', document);
 	
