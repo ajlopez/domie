@@ -51,3 +51,19 @@ exports['html has body'] = function (test) {
 	test.equal(body.tagName, "BODY");
 	test.equal(body.nodeType, 1);
 }
+
+exports['create element'] = function (test) {
+	var document = domie.document();
+	
+	var element = document.createElement('h1');
+	
+	test.ok(element);
+	test.equal(element.tagName, 'H1');
+	
+	element.tagName = 'h2';
+	test.equal(element.tagName, 'H1');
+	
+	test.equal(element.nodeType, 1);
+	element.nodeType = 42;
+	test.equal(element.nodeType, 1);
+}
