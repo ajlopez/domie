@@ -14,6 +14,10 @@ npm install domie
 
 TBD
 
+## References
+
+- [The HTML DOM Document Object](https://www.w3schools.com/jsref/dom_obj_document.asp)
+
 ## Samples
 
 TBD
