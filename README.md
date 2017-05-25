@@ -25,6 +25,7 @@ TBD
 ## Versions
 
 - 0.0.1, published
+- 0.0.2, accessing attributes by index
 
 ## Contribution
 
