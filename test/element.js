@@ -81,6 +81,8 @@ exports['set and get named attribute'] = function (test) {
 	test.ok(result);
 	test.equal(result.name, 'id');
 	test.equal(result.value, '42');
+	
+	test.equal(element.attributes.length, 1);
 };
 
 exports['set, get and remove named attribute'] = function (test) {
