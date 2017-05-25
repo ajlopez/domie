@@ -19,6 +19,15 @@ exports['get elements by upper case tag name'] = function (test) {
 	test.equal(elements[0].tagName, 'BODY');
 };
 
+exports['get inner elements by tag name'] = function (test) {
+	var document = domie.document();
+	document.getElementsByTagName('body')[0].innerHTML = "<h1>Hello</h1>";
+	var elements = document.getElementsByTagName('h1');
+	
+	test.ok(elements);
+	test.equal(elements.length, 1);
+	test.equal(elements[0].tagName, 'H1');
+};
 
 exports['get elements by mixed case tag name'] = function (test) {
 	var elements = document.getElementsByTagName('Body');
