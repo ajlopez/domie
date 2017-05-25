@@ -85,6 +85,45 @@ exports['set and get named attribute'] = function (test) {
 	test.equal(element.attributes.length, 1);
 };
 
+exports['set and get named attributes'] = function (test) {
+	var document = domie.document();
+	var element = document.createElement('h1');
+
+	var attr1 = document.createAttribute('id');
+	attr1.value = 42;
+	element.attributes.setNamedItem(attr1);
+	
+	var attr2 = document.createAttribute('name');
+	attr2.value = 'foo';
+	element.attributes.setNamedItem(attr2);
+
+	var result = element.attributes.getNamedItem('id');
+	
+	test.ok(result);
+	test.equal(result.name, 'id');
+	test.equal(result.value, '42');
+
+	var result = element.attributes.getNamedItem('name');
+	
+	test.ok(result);
+	test.equal(result.name, 'name');
+	test.equal(result.value, 'foo');
+	
+	test.equal(element.attributes.length, 2);
+
+	var result = element.attributes[0];
+	
+	test.ok(result);
+	test.equal(result.name, 'id');
+	test.equal(result.value, '42');
+
+	var result = element.attributes[1];
+	
+	test.ok(result);
+	test.equal(result.name, 'name');
+	test.equal(result.value, 'foo');
+};
+
 exports['set, get and remove named attribute'] = function (test) {
 	var document = domie.document();
 	var element = document.createElement('h1');
