@@ -208,7 +208,7 @@ exports['append child'] = function (test) {
 	test.equal(element.outerHTML, '<h1>hello world</h1>');
 };
 
-exports['remove node'] = function (test) {
+exports['remove child'] = function (test) {
 	var document = domie.document();
 	var element = document.createElement('h1');
 	var text1 = document.createTextNode('hello ');
@@ -220,7 +220,7 @@ exports['remove node'] = function (test) {
 	test.equal(element.childNodes.length, 2);
 	test.equal(element.outerHTML, '<h1>hello world</h1>');
 	
-	element.removeNode(text1);
+	element.removeChild(text1);
 	
 	test.equal(element.childNodes.length, 1);
 	test.equal(element.outerHTML, '<h1>world</h1>');
