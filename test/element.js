@@ -226,5 +226,17 @@ exports['remove node'] = function (test) {
 	test.equal(element.outerHTML, '<h1>world</h1>');
 };
 
+exports['insert before'] = function (test) {
+	var document = domie.document();
+	var element = document.createElement('h1');
+	var text1 = document.createTextNode('hello ');
+	var text2 = document.createTextNode('world');
+	
+	element.appendChild(text2);
+	element.insertBefore(text1, text2);
+	
+	test.equal(element.childNodes.length, 2);
+	test.equal(element.outerHTML, '<h1>hello world</h1>');
+};
 
 
