@@ -27,6 +27,7 @@ TBD
 - 0.0.1, published
 - 0.0.2, accessing attributes by index
 - 0.0.3, removeChild, insertBefore
+- 0.0.4, using short tag in outer HTML when inner HTML is empty
 
 ## Contribution
 
