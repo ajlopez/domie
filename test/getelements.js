@@ -61,7 +61,7 @@ exports['get element by id'] = function (test) {
 	
 	test.ok(result);
 	test.equal(result.tagName, 'H1');
-	test.equal(result.outerHTML, '<h1 id="42"></h1>');
+	test.equal(result.outerHTML, '<h1 id="42" />');
 };
 
 exports['get unknown element by id'] = function (test) {	

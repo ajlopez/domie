@@ -41,7 +41,7 @@ exports['parse simple element'] = function (test) {
 	test.equal(result.length, 1);
 	test.equal(result[0].nodeType, 1);
 	test.equal(result[0].tagName, 'H1');
-	test.equal(result[0].outerHTML, '<h1></h1>');
+	test.equal(result[0].outerHTML, '<h1 />');
 }
 
 exports['parse element with text'] = function (test) {
@@ -102,11 +102,11 @@ exports['parse two elements'] = function (test) {
 
 	test.equal(result[0].nodeType, 1);
 	test.equal(result[0].tagName, 'H1');
-	test.equal(result[0].outerHTML, '<h1></h1>');
+	test.equal(result[0].outerHTML, '<h1 />');
 
 	test.equal(result[1].nodeType, 1);
 	test.equal(result[1].tagName, 'H2');
-	test.equal(result[1].outerHTML, '<h2></h2>');
+	test.equal(result[1].outerHTML, '<h2 />');
 }
 
 exports['parse two elements with text'] = function (test) {

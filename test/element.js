@@ -14,7 +14,7 @@ exports['outer HTML'] = function (test) {
 	var element = domie.document().createElement('h1');
 	
 	test.ok(element);
-	test.equal(element.outerHTML, '<h1></h1>');
+	test.equal(element.outerHTML, '<h1 />');
 };
 
 exports['inner HTML'] = function (test) {
@@ -145,7 +145,7 @@ exports['outer HTML with attribute'] = function (test) {
 	attr.value = 42;
 	element.attributes.setNamedItem(attr);
 	
-	test.equal(element.outerHTML, '<h1 id="42"></h1>');
+	test.equal(element.outerHTML, '<h1 id="42" />');
 };
 
 exports['get attribute'] = function (test) {
