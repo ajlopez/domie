@@ -28,6 +28,7 @@ TBD
 - 0.0.2, accessing attributes by index
 - 0.0.3, removeChild, insertBefore
 - 0.0.4, using short tag in outer HTML when inner HTML is empty
+- 0.0.5, create element with NS
 
 ## Contribution
 
