@@ -10,6 +10,15 @@ exports['outer HTML'] = function (test) {
 	test.strictEqual(element.ownerDocument, document);
 };
 
+exports['create element with NS'] = function (test) {
+	var document = domie.document();
+	
+	var element = document.createElementNS('h1');
+	
+	test.ok(element.ownerDocument);
+	test.strictEqual(element.ownerDocument, document);
+};
+
 exports['outer HTML'] = function (test) {
 	var element = domie.document().createElement('h1');
 	
