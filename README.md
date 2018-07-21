@@ -17,6 +17,7 @@ TBD
 ## References
 
 - [The HTML DOM Document Object](https://www.w3schools.com/jsref/dom_obj_document.asp)
+- [querySelector and querySelectorAll vs getElementsByClassName and getElementById in JavaScript](https://stackoverflow.com/questions/14377590/queryselector-and-queryselectorall-vs-getelementsbyclassname-and-getelementbyid)
 
 ## Samples
 
